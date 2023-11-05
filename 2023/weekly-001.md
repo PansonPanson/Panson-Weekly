@@ -140,4 +140,4 @@ SQL 语句如下：
 
 + [得物数据库中间件平台“彩虹桥”演进之路](https://mp.weixin.qq.com/s/ZyMBRJqbDQWYxjqlGAquKQ)
 + [彩虹桥架构演进之路-性能篇｜得物技术](https://mp.weixin.qq.com/s/QxtCyNSvxzvJHxwdJzQKzw)
-+ [如何正确使用 Bean Validation 进行数据校验｜得物技术](
++ [如何正确使用 Bean Validation 进行数据校验｜得物技术](https://mp.weixin.qq.com/s/Z7bM6vP-lHJzkzeHpN8N0g)
