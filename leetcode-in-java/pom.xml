@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>in-java</artifactId>
+    <artifactId>leetcode-in-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>in-java</name>
-    <description>in-java</description>
+    <name>leetcode-in-java</name>
+    <description>leetcode-in-java</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
