@@ -1,5 +1,4 @@
 
-
 *日拱一卒*
 
 _________________
@@ -7,7 +6,7 @@ _________________
 # 1 一周见闻
 
 ## 1.1 技术文章
-+ 
++
 
 ## 1.2 泛互联网文章
 
@@ -20,7 +19,7 @@ _________________
 # 3 Algorithm(算法题)
 
 + [100. 相同的树](https://leetcode.cn/problems/same-tree/)
-+ 
++
 ```java
 /**
  * Definition for a binary tree node.
@@ -133,26 +132,26 @@ class Solution {
  * }
  */
 class Solution {
-  public boolean isSymmetric(TreeNode root) {
-    if(root == null) {
-      return true;
-    }
-    return isSymmetric(root.left, root.right);
-  }
-
-  public boolean isSymmetric(TreeNode left, TreeNode right) {
-    if(left == null && right == null) {
-      return true;
+    public boolean isSymmetric(TreeNode root) {
+        if(root == null) {
+            return true;
+        }
+        return isSymmetric(root.left, root.right);
     }
 
-    if(right == null || left == null) {
-      return false;
+    public boolean isSymmetric(TreeNode left, TreeNode right) {
+        if(left == null && right == null) {
+            return true;
+        }
+
+        if(right == null || left == null) {
+            return false;
+        }
+        if(left.val != right.val) {
+            return false;
+        }
+        return isSymmetric(left.left, right.right) && isSymmetric(left.right, right.left);
     }
-    if(left.val != right.val) {
-      return false;
-    }
-    return isSymmetric(left.left, right.right) && isSymmetric(left.right, right.left);
-  }
 
 
 }
