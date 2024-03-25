@@ -8,3 +8,15 @@
 + [995. K 连续位的最小翻转次数](https://leetcode.cn/problems/minimum-number-of-k-consecutive-bit-flips/description/)
 + [1094. 拼车](https://leetcode.cn/problems/car-pooling/description/)
 + [1109. 航班预订统计](https://leetcode.cn/problems/corporate-flight-bookings/)
+
+## 滑动窗口
+
++ [187. 重复的DNA序列](https://leetcode.cn/problems/repeated-dna-sequences/description/)
++ [1838. 最高频元素的频数](https://leetcode.cn/problems/frequency-of-the-most-frequent-element/description/)
++ [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/)
+
+## 动态规划
+
+### 子序列
++ [53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/description/)    
++ 
