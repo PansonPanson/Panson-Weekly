@@ -25,3 +25,4 @@
 ## 单调栈
 + [496. 下一个更大元素 I](https://leetcode.cn/problems/next-greater-element-i/description/)
 + [739. 每日温度](https://leetcode.cn/problems/daily-temperatures/description/)
++ [503. 下一个更大元素 II](https://leetcode.cn/problems/next-greater-element-ii/description/)
