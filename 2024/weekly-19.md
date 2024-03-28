@@ -1,0 +1,68 @@
+
+*日拱一卒*
+
+_________________
+
+# 1 一周见闻
+
+## 1.1 技术文章
++
+
+## 1.2 泛互联网文章
+
+
+
+# 2 技术总结
+
+
+
+# 3 Algorithm(算法题)
+
++ [496. 下一个更大元素 I](https://leetcode.cn/problems/next-greater-element-i/description/)
+```java
+
+class Solution {
+    public int[] nextGreaterElement(int[] nums1, int[] nums2) {
+        int[] memory = nextGreaterElement(nums2);
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int i = 0; i < nums2.length; i++) {
+            map.put(nums2[i], memory[i]);
+        }
+        int[] res = new int[nums1.length];
+        for(int i = 0; i < nums1.length; i++) {
+            res[i] = map.get(nums1[i]);
+        }
+        return res;
+    }
+
+    public int[] nextGreaterElement(int[] nums) {
+        int n = nums.length;
+        int[] res = new int[n];
+        Deque<Integer> stack = new ArrayDeque<>();
+        for(int i = n - 1; i >= 0; i--) {
+            while(!stack.isEmpty() && stack.peek() <= nums[i]) {
+                stack.pop();
+            }
+            res[i] = stack.isEmpty() ? -1 : stack.peek();
+            stack.push(nums[i]);
+        }
+        return res;
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -19,4 +19,8 @@
 
 ### 子序列
 + [53. 最大子数组和](https://leetcode.cn/problems/maximum-subarray/description/)    
-+ 
+
+
+
+## 单调栈
++ [496. 下一个更大元素 I](https://leetcode.cn/problems/next-greater-element-i/description/)
