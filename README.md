@@ -4,7 +4,8 @@
 
 
 # 面试资料
-+ []
+1. [阿里社区分享的用面试官的思维写简历](https://developer.aliyun.com/ebook/7571?spm=a2c6h.12873639.article-detail.7.2cc43c8cOqVwDB&source=5176.11533457&userCode=b3pdrgck)
+2. [淘宝工程师的服务端开发与面试知识手册](https://tb-tech.oss-cn-hangzhou.aliyuncs.com/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%8E%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E6%89%8B%E5%86%8C.pdf)
 
 # leetcode
 
