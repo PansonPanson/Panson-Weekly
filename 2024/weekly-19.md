@@ -90,6 +90,13 @@ class Solution {
 }
 ```
 
++ [1019. 链表中的下一个更大节点](https://leetcode.cn/problems/next-greater-node-in-linked-list/description/)
+```java
+
+
+
+```
+
 
 
 
