@@ -128,6 +128,38 @@ class Solution {
 
 ```
 
++ [239. 滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)
+
+```java
+
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        // 使用大根堆，每一个元素为 <index, num>
+        PriorityQueue<int[]> priorityQueue = new PriorityQueue<>((a, b) -> b[1] - a[1]);
+        int n = nums.length;
+        int[] res = new int[n - k + 1];
+        int index = 0;
+        int i = 0;
+        while(i < k) {
+            priorityQueue.offer(new int[] {i, nums[i]});
+            i++;
+        }
+        res[index++] = priorityQueue.peek()[1];
+
+        while(i < n) {
+            priorityQueue.offer(new int[] {i, nums[i]});
+            while(i - priorityQueue.peek()[0] >= k) {
+                priorityQueue.poll();
+            }
+            res[index++] = priorityQueue.peek()[1]; 
+            i++;
+        }
+        return res;
+    }
+}
+```
+
+
 
 
 
