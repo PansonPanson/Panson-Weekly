@@ -66,9 +66,4 @@ public class L239 {
 
         return res;
     }
-
-
-    public static void main(String[] args) {
-        maxSlidingWindow(new int[]{7, 2,,4})
-    }
 }

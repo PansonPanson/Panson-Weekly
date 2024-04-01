@@ -35,3 +35,4 @@
 
 ## 单调队列
 + [239. 滑动窗口最大值](https://leetcode.cn/problems/sliding-window-maximum/description/)
++ [1438. 绝对差不超过限制的最长连续子数组](https://leetcode.cn/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/description/)
