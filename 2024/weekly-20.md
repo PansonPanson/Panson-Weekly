@@ -80,6 +80,67 @@ class Solution {
 }
 ```
 
++ [46. 全排列](https://leetcode.cn/problems/permutations/description/)
+
+```java
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        int n = nums.length;
+        backTrace(res, nums, new ArrayList<>());
+        return res;
+    }
+
+    public void backTrace(List<List<Integer>> res, int[] nums, List<Integer> tmpList) {
+        if(tmpList.size() == nums.length) {
+            res.add(new ArrayList<>(tmpList));
+        } else {
+            for(int i = 0; i < nums.length; i++) {
+                if(tmpList.contains(nums[i])) {
+                    continue;
+                }
+                tmpList.add(nums[i]);
+                backTrace(res, nums, tmpList);
+                tmpList.remove(tmpList.size() - 1);
+            }
+        }
+    }
+} 
+```
+
+```java
+// 使用布尔数组优化
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>> res = new ArrayList<>();
+        int n = nums.length;
+        boolean[] used = new boolean[n];
+        backTrack(res, nums, new ArrayList<>(), used);
+        return res;
+    }
+
+    public void backTrack(List<List<Integer>> res, int[] nums, List<Integer> tmpList, boolean[] used) {
+        if(tmpList.size() == nums.length) {
+            res.add(new ArrayList<>(tmpList));
+            return;
+        } 
+
+        for(int i = 0; i < nums.length; i++) {
+            if(used[i]) {
+                continue;
+            }
+            used[i] = true;
+            tmpList.add(nums[i]);
+            backTrack(res, nums, tmpList, used);
+            used[i] = false;
+            tmpList.remove(tmpList.size() - 1);
+        }
+        
+    }
+}
+```
+
+
 
 
 
