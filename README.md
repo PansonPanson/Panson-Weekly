@@ -40,29 +40,3 @@
 
 ## 回溯
 + [46. 全排列](https://leetcode.cn/problems/permutations/description/)
-
-```java
-class Solution {
-    public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        int n = nums.length;
-        backTrace(res, nums, new ArrayList<>());
-        return res;
-    }
-
-    public void backTrace(List<List<Integer>> res, int[] nums, List<Integer> tmpList) {
-        if(tmpList.size() == nums.length) {
-            res.add(new ArrayList<>(tmpList));
-        } else {
-            for(int i = 0; i < nums.length; i++) {
-                if(tmpList.contains(nums[i])) {
-                    continue;
-                }
-                tmpList.add(nums[i]);
-                backTrace(res, nums, tmpList);
-                tmpList.remove(tmpList.size() - 1);
-            }
-        }
-    }
-} 
-```
