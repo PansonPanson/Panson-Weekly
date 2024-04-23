@@ -1,38 +1,35 @@
 package top.panson.injava.tags.intervals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * @author Panson
- * @create 2024-04-22
+ * @create 2024-04-24
  */
 public class L056 {
 
     class Solution {
-        public int removeCoveredIntervals(int[][] intervals) {
-            Arrays.sort(intervals, (a, b) -> {
-                if(a[0] == b[0]) {
-                    return b[1] - a[1];
-                } else {
-                    return a[0] - b[0];
-                }
-            });
-
+        public int[][] merge(int[][] intervals) {
+            Arrays.sort(intervals, Comparator.comparingInt(a -> a[0])
+            );
+            List<int[]> res = new ArrayList<>();
             int left = intervals[0][0];
             int right = intervals[0][1];
-            int count = 0;
             for(int i = 1; i < intervals.length; i++) {
                 int[] cur = intervals[i];
-                if(left <= cur[0] && right >= cur[1]) {
-                    count++;
-                } else if(right >= cur[0] && right <= cur[1]) {
-                    right = cur[1];
-                } else {
+                if(right < cur[0]) {
+                    res.add(new int[]{left, right});
                     left = cur[0];
                     right = cur[1];
+                } else {
+                    right = Math.max(right, cur[1]);
                 }
             }
-            return intervals.length - count;
+            res.add(new int[]{left, right});
+            return res.toArray(new int[res.size()][]);
         }
     }
 }
