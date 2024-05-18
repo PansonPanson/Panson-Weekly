@@ -1,6 +1,16 @@
 
-# 供应链博文
+# 供应链相关博文
 + [新零售SaaS架构：中央库存系统架构设计](https://www.woshipm.com/pd/5639250.html)
++ [路径规划中的DRL与OR算法：对比与展望｜得物技术](https://mp.weixin.qq.com/s/loAucq60oOcjfXokQfw9Yw)
++ [供应链管理后台秒开体验优化 ｜ 得物技术](https://mp.weixin.qq.com/s/2dRbxug7_v8pk9YDaHjTGQ)
++ [供应链时效域接口性能进阶之路 ｜ 得物技术](https://mp.weixin.qq.com/s/M3WmLWIcB4maJ_hAiJxZCA)
++ [得物供应链复杂业务实时数仓建设之路](https://mp.weixin.qq.com/s/4StnjSWpd4rO_GiajmPA6Q)
++ [分布式事务之最终一致性在得物仓储的实践](https://mp.weixin.qq.com/s/nku-zQ3asB9K7qOtnx9HYQ)
++ [ORM框架在Pink客户端的自动化实践](https://mp.weixin.qq.com/s/QFm2xpC7TlVYTeR_dV5onA)
++ [NOC-SLA 之得物C端业务监控实践](https://mp.weixin.qq.com/s/e9KQGa4ZwEh47h62l_N-mQ)
++ [精选文章｜供应链库存幂等实战分享](https://mp.weixin.qq.com/s/yHiqtDJ5PUFld7W-RfO-Ww)
++ [供应链PC实操落地实践｜得物技术](https://mp.weixin.qq.com/s/-BDHcFsxSAd-13XKWJORfw)
+
 
 
 # 面试资料
@@ -42,3 +52,8 @@
 + [46. 全排列](https://leetcode.cn/problems/permutations/description/)
 + [51. N 皇后](https://leetcode.cn/problems/n-queens/description/)
 + [52. N 皇后 II](https://leetcode.cn/problems/n-queens-ii/description/)
+
+
+
+# 未分类博文阅读
++ [精选文章｜浅谈TS如何提高自主处理占比](https://mp.weixin.qq.com/s/wCeZONSK5bCvn5sOK-0qRg)
