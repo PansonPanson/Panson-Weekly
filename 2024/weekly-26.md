@@ -184,6 +184,87 @@ class Solution {
 }
 ```
 
++ [21. 合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode head = new ListNode(-1);
+        ListNode dummy = head;
+        while(list1 != null && list2 != null) {
+            if(list1.val < list2.val) {
+                head.next = list1;
+                list1 = list1.next;
+            } else {
+                head.next = list2;
+                list2 = list2.next;
+            }
+            // -1, -9, 3,
+            head = head.next;
+        }
+
+        if(list1 != null) {
+            head.next = list1;
+        }
+        if(list2 != null) {
+            head.next = list2;
+        }
+
+        return dummy.next;
+
+    }
+}
+```
+
+
++ [23. 合并 K 个升序链表](https://leetcode.cn/problems/merge-k-sorted-lists/description/)
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if(lists == null || lists.length == 0) {
+            return null;
+        }
+        PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, (a, b) -> (a.val - b.val));
+        for(ListNode node : lists) {
+            if(node != null) {
+                queue.offer(node);
+            }
+        }
+
+        ListNode p = new ListNode(-1);
+        ListNode dummy = p;
+        while(!queue.isEmpty()) {
+            ListNode node = queue.poll();
+            p.next = node;
+            if(node.next != null) {
+                queue.offer(node.next);
+            }
+            p = p.next;
+        }
+        return dummy.next;
+    }
+}
+
+```
 
 
 
