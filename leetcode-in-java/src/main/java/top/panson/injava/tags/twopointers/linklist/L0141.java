@@ -1,4 +1,4 @@
-package top.panson.injava.tags.twopointers;
+package top.panson.injava.tags.twopointers.linklist;
 
 import top.panson.injava.question.commondata.ListNode;
 
@@ -6,7 +6,7 @@ import top.panson.injava.question.commondata.ListNode;
  * @author Panson
  * @create 2024-05-21
  */
-public class L0142 {
+public class L0141 {
 
     /**
      * Definition for singly-linked list.
@@ -20,32 +20,21 @@ public class L0142 {
      * }
      */
     public class Solution {
-        public ListNode detectCycle(ListNode head) {
+        public boolean hasCycle(ListNode head) {
             if(head == null || head.next == null) {
-                return null;
+                return false;
             }
+
             ListNode slow = head;
             ListNode fast = head;
-            boolean existCycle = false;
             while(fast != null && fast.next != null) {
                 slow = slow.next;
                 fast = fast.next.next;
-
                 if(slow == fast) {
-                    existCycle = true;
-                    break;
+                    return true;
                 }
             }
-            if(existCycle) {
-                fast = head;
-            } else {
-                return null;
-            }
-            while(fast != slow) {
-                fast = fast.next;
-                slow = slow.next;
-            }
-            return fast;
+            return false;
         }
     }
 }

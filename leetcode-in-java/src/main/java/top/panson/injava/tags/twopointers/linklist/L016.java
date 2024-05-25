@@ -1,4 +1,4 @@
-package top.panson.injava.tags.twopointers;
+package top.panson.injava.tags.twopointers.linklist;
 
 import top.panson.injava.question.commondata.ListNode;
 
