@@ -4,6 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /**
+ * 如何用栈实现一个队列
  * @author Panson
  * @create 2024-05-31
  */
