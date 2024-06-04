@@ -1,5 +1,7 @@
 package top.panson.injava.tags.twopointers.arraylist;
 
+import top.panson.injava.question.commondata.ListNode;
+
 /**
  * @author Panson
  * @create 2024-06-04
@@ -30,7 +32,7 @@ public class L083 {
                 }
                 p1.next = p2;
                 p1 = p1.next;
-            }a
+            }
             return dummy.next;
         }
     }
