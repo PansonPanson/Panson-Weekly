@@ -101,6 +101,39 @@ class Solution {
 
 ```
 
++ [46. 全排列](https://leetcode.cn/problems/permutations/description/)
+```java
+class Solution {
+     List<List<Integer>> res = new ArrayList<>();
+
+        public List<List<Integer>> permute(int[] nums) {
+            LinkedList<Integer> track = new LinkedList<>();
+            boolean[] used = new boolean[nums.length];
+            backtrack(nums, track, used);
+            return res;
+        }
+
+        public List<List<Integer>> backtrack(int[] nums, LinkedList<Integer> track, boolean[] used) {
+            if(nums.length == track.size()) {
+                res.add(new LinkedList<>(track));
+            }
+            for(int i = 0; i < nums.length; i++) {
+                if(used[i]) {
+                    continue;
+                }
+
+                track.add(nums[i]);
+                used[i] = true;
+                backtrack(nums, track, used);
+
+                track.removeLast();
+                used[i] = false;
+            }
+            return res;
+        }
+}
+```
+
 
 
 
