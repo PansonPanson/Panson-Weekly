@@ -42,6 +42,33 @@ class Solution {
 ```
 
 
++ [77. 组合](https://leetcode.cn/problems/combinations/description/)
+```java
+class Solution {
+
+    List<List<Integer>> res = new ArrayList<>();
+    LinkedList<Integer> track = new LinkedList<>();
+
+    public List<List<Integer>> combine(int n, int k) {
+        backtrack(n, 1, k);
+        return res;
+    }
+
+    public void backtrack(int n, int start, int k) {
+        if(k == track.size()) {
+            res.add(new LinkedList<>(track));
+        }
+
+        for(int i = start; i <= n; i++) {
+            track.add(i);
+            backtrack(n, i + 1, k);
+            track.removeLast();
+        }
+    }
+}
+```
+
+
 
 
 
