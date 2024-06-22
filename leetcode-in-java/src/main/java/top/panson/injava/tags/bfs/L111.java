@@ -10,8 +10,6 @@ import java.util.ArrayDeque;
  */
 public class L111 {
     class Solution {
-
-
         public int minDepth(TreeNode root) {
             if(root == null) {
                 return 0;
