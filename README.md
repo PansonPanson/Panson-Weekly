@@ -1,5 +1,6 @@
 
 # 供应链相关博文
++ [京东技术-供应链大屏设计实践](https://mp.weixin.qq.com/s/zRZtl89bVgWRTnK-YmfNcg)
 + [新零售SaaS架构：中央库存系统架构设计](https://www.woshipm.com/pd/5639250.html)
 + [路径规划中的DRL与OR算法：对比与展望｜得物技术](https://mp.weixin.qq.com/s/loAucq60oOcjfXokQfw9Yw)
 + [供应链管理后台秒开体验优化 ｜ 得物技术](https://mp.weixin.qq.com/s/2dRbxug7_v8pk9YDaHjTGQ)
