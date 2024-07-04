@@ -1,6 +1,6 @@
 package top.panson.injava.tags.bfs;
 
-import top.panson.injava.question.commondata.TreeNode;
+import top.panson.injava.deprecated.question.commondata.TreeNode;
 
 import java.util.ArrayDeque;
 

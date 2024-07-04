@@ -1,6 +1,6 @@
 package top.panson.injava.tags.linklist;
 
-import top.panson.injava.question.commondata.ListNode;
+import top.panson.injava.deprecated.question.commondata.ListNode;
 
 /**
  * @author Panson

@@ -1,8 +1,7 @@
 package top.panson.injava.tags.twopointers.linklist;
 
-import top.panson.injava.question.commondata.ListNode;
+import top.panson.injava.deprecated.question.commondata.ListNode;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**

@@ -1,6 +1,6 @@
 package top.panson.injava.tags.binarytree;
 
-import top.panson.injava.question.commondata.TreeNode;
+import top.panson.injava.deprecated.question.commondata.TreeNode;
 
 /**
  * @author Panson

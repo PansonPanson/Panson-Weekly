@@ -361,6 +361,137 @@ class Solution {
  
 ```
 
++ [234. 回文链表](https://leetcode.cn/problems/palindrome-linked-list/description/)
+```java
+
+//leetcode submit region begin(Prohibit modification and deletion)
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    // 快慢指针找到要反转的起始节点
+    // 翻转后半部分
+    // 遍历对比
+    public boolean isPalindrome(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        if(fast != null) {
+            slow = slow.next;
+        }
+        ListNode last = reverse(slow);
+
+
+        while(last != null) {
+            if(last.val != head.val) {
+                return false;
+            }
+            last = last.next;
+            head = head.next;
+        }
+        return true;
+
+    }
+
+    public ListNode reverse(ListNode head) {
+        ListNode pre = null;
+        ListNode cur = head;
+        while(cur != null) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
+
+
+
+}
+//leetcode submit region end(Prohibit modification and deletion)
+
+```
+
+
++ [25. K 个一组翻转链表](https://leetcode.cn/problems/reverse-nodes-in-k-group/description/)
+```java
+class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if(head == null) {
+            return head;
+        }
+
+        ListNode a = head;
+        ListNode b = head;
+
+        // 12345
+        for(int i = 0; i < k; i++) {
+            if(b == null) {
+                return head;
+            }
+            b = b.next;
+        }
+
+        ListNode newHead = reverse(a, b);
+        a.next = reverseKGroup(b, k);
+        return newHead;
+    }
+
+    public ListNode reverse(ListNode a, ListNode b) {
+        ListNode pre = null;
+        ListNode cur = a;
+
+        while(cur != b) {
+            ListNode next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+        return pre;
+    }
+
+
+}
+
+```
+
+
++ [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/description/)
+```java
+
+
+//leetcode submit region begin(Prohibit modification and deletion)
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int p1 = m - 1;
+        int p2 = n - 1;
+        int i = m + n - 1;
+        while(p1 >= 0 && p2 >= 0) {
+            if(nums1[p1] > nums2[p2]) {
+                nums1[i--] = nums1[p1--];
+            } else {
+                nums1[i--] = nums2[p2--];
+            }
+        }
+
+        while (p2 >= 0) {
+            nums1[i--] = nums2[p2--];
+        }
+    }
+}
+//leetcode submit region end(Prohibit modification and deletion)
+
+````
 
 
 

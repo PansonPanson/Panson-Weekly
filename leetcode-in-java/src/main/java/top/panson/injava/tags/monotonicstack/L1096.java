@@ -1,11 +1,9 @@
 package top.panson.injava.tags.monotonicstack;
 
-import top.panson.injava.question.commondata.ListNode;
+import top.panson.injava.deprecated.question.commondata.ListNode;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
 import java.util.Deque;
-import java.util.List;
 
 /**
  * @author Panson
