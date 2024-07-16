@@ -1,4 +1,4 @@
-package top.panson.injava.tags.twopointers.arraylist;
+package top.panson.injava.tags.linklist.twopointers.arraylist;
 
 /**
  * @author Panson

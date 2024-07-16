@@ -1,14 +1,12 @@
-package top.panson.injava.tags.twopointers.linklist;
+package top.panson.injava.tags.linklist.twopointers.linklist;
 
 import top.panson.injava.deprecated.question.commondata.ListNode;
 
 /**
  * @author Panson
- * @create 2024-05-22
+ * @create 2024-05-23
  */
-public class L016 {
-
-
+public class L0876 {
     /**
      * Definition for singly-linked list.
      * public class ListNode {
@@ -20,21 +18,20 @@ public class L016 {
      * }
      */
     class Solution {
-        public ListNode removeNthFromEnd(ListNode head, int n) {
+        public ListNode middleNode(ListNode head) {
             ListNode dummy = new ListNode(-1);
             dummy.next = head;
-            ListNode pre = dummy;
-            ListNode cur = dummy;
-            while(n > 0) {
-                cur = cur.next;
-                n--;
+            ListNode p1 = dummy;
+            ListNode p2 = dummy;
+            while(p2 != null && p2.next != null) {
+                p1 = p1.next;
+                p2 = p2.next.next;
             }
-            while(cur.next != null) {
-                cur = cur.next;
-                pre = pre.next;
+            if(p2 == null) {
+                return p1;
+            } else {
+                return p1.next;
             }
-            pre.next = pre.next.next;
-            return dummy.next;
         }
     }
 }

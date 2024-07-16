@@ -1,4 +1,4 @@
-package top.panson.injava.tags.twopointers.linklist;
+package top.panson.injava.tags.linklist.twopointers.linklist;
 
 import java.util.ArrayList;
 import java.util.Arrays;
