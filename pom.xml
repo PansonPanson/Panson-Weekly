@@ -21,6 +21,7 @@
 
     <modules>
         <module>leetcode-in-java</module>
+        <module>code-in-java</module>
     </modules>
 
     <build>
