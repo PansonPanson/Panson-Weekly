@@ -1,4 +1,4 @@
-package top.panson.injava.tags.prefixsum;
+package top.panson.injava.tags.presum;
 
 /**
  * @author Panson
