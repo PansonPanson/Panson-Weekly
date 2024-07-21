@@ -178,6 +178,28 @@ class Solution {
 }
 ```
 
++ [724. 寻找数组的中心下标](https://leetcode.cn/problems/find-pivot-index/description/)
+```java
+class Solution {
+    public int pivotIndex(int[] nums) {
+        int[] preSum = new int[nums.length];
+        preSum[0] = nums[0];
+        for(int i = 1; i < nums.length; i++) {
+            preSum[i] = preSum[i - 1] + nums[i];
+        }
+        if(preSum[nums.length - 1] - nums[0] == 0) {
+            return 0;
+        }
+        for(int i = 1; i < nums.length; i++) {
+            if(preSum[i - 1] * 2 == preSum[nums.length - 1] - nums[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
+```
+
 
 
 
