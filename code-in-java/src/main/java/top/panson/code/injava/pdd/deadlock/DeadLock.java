@@ -1,5 +1,6 @@
 package top.panson.code.injava.pdd.deadlock;
 
+import java.util.Arrays;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -49,6 +50,9 @@ public class DeadLock {
 
             }
         });
+
+        int[] nums = new int[100];
+        System.out.println(Arrays.toString(nums));
 
 
         try {
