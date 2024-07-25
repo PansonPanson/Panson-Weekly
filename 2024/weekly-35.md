@@ -269,6 +269,41 @@ class Solution {
 ```
 
 
++ [LCR 180. 文件组合](https://leetcode.cn/problems/he-wei-sde-lian-xu-zheng-shu-xu-lie-lcof/description/)
+```java
+ class Solution {
+    public int[][] fileCombination(int target) {
+        if(target < 3) {
+            return new int[0][];
+        }
+        int i = 1;
+        int j = 1;
+        int sum = 0;
+        List<int[]> res = new ArrayList<>();
+        // 123  3
+        while(i <= target / 2) {
+            if(sum < target) {
+                sum += j;
+                j++;
+            } else if(sum > target) {
+                sum -= i;
+                i++;
+            } else {
+                int[] subRes = new int[j - i];
+                for(int k = i; k < j; k++) {
+                    subRes[k - i] = k;
+                }
+                res.add(subRes);
+                sum -= i;
+                i++;
+            }
+        }
+        return res.toArray(new int[res.size()][]);
+    }
+}
+```
+
+
 
 
 
