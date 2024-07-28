@@ -350,6 +350,24 @@ class Solution {
 } 
 ```
 
++ [877. 石子游戏](https://leetcode.cn/problems/stone-game/description/)
+```java
+class Solution {
+    public boolean stoneGame(int[] piles) {
+        return true;
+    }
+} 
+```
+
++ [319. 灯泡开关](https://leetcode.cn/problems/bulb-switcher/description/)
+```java
+class Solution {
+    public int bulbSwitch(int n) {
+        return (int)Math.sqrt(n);
+    }
+}
+```
+
 
 
 
