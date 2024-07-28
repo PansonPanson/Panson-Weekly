@@ -407,6 +407,19 @@ class Solution {
 } 
 ```
 
++ [268. 丢失的数字](https://leetcode.cn/problems/missing-number/description/)
+```java
+class Solution {
+    public int missingNumber(int[] nums) {
+        int res = nums.length;
+        for(int i = 0; i < nums.length; i++) {
+            res = res ^ nums[i] ^ i;
+        }
+        return res;
+    }
+} 
+```
+
 
 
 
