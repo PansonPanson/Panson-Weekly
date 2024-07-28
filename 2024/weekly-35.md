@@ -381,6 +381,20 @@ class Solution {
 } 
 ```
 
++ [191. 位1的个数](https://leetcode.cn/problems/number-of-1-bits/description/)
+```java
+class Solution {
+    public int hammingWeight(int n) {
+        int res = 0;
+        while(n != 0){
+            n &= (n - 1);
+            res++;
+        }
+        return res;
+    }
+} 
+```
+
 
 
 
