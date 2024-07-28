@@ -341,6 +341,16 @@ class Solution {
 ```
 
 
++ [292. Nim 游戏](https://leetcode.cn/problems/nim-game/description/)
+```java
+class Solution {
+    public boolean canWinNim(int n) {
+        return n % 4 != 0;
+    }
+} 
+```
+
+
 
 
 
