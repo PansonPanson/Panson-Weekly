@@ -1,6 +1,6 @@
 package top.panson.injava.deprecated.question.codetop.bytedance;
 
-import top.panson.injava.deprecated.question.commondata.ListNode;
+import top.panson.injava.tags.commondata.ListNode;
 
 /**
  * @create 2022-06-09 17:22

@@ -1,6 +1,6 @@
 package top.panson.injava.deprecated.question.top100;
 
-import top.panson.injava.deprecated.question.commondata.ListNode;
+import top.panson.injava.tags.commondata.ListNode;
 
 /**
  * @create 2022-01-20 15:15

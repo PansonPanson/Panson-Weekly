@@ -1,6 +1,6 @@
 package top.panson.injava.deprecated.question.practice.tree;
 
-import top.panson.injava.deprecated.question.commondata.Node;
+import top.panson.injava.tags.commondata.Node;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

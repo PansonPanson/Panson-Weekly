@@ -1,6 +1,6 @@
 package top.panson.injava.deprecated.question.codetop.bytedance;
 
-import top.panson.injava.deprecated.question.commondata.TreeNode;
+import top.panson.injava.tags.commondata.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;

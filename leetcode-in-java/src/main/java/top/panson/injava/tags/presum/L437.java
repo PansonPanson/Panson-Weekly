@@ -1,6 +1,6 @@
 package top.panson.injava.tags.presum;
 
-import top.panson.injava.deprecated.question.commondata.TreeNode;
+import top.panson.injava.tags.commondata.TreeNode;
 
 /**
  * @author Panson

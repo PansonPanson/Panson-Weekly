@@ -1,6 +1,6 @@
 package top.panson.injava.deprecated.question.practice.tree.bst;
 
-import top.panson.injava.deprecated.question.commondata.TreeNode;
+import top.panson.injava.tags.commondata.TreeNode;
 
 /**
  * @create 2022-05-30 16:32

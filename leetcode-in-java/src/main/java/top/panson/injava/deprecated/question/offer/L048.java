@@ -1,6 +1,6 @@
 package top.panson.injava.deprecated.question.offer;
 
-import top.panson.injava.deprecated.question.commondata.TreeNode;
+import top.panson.injava.tags.commondata.TreeNode;
 
 import java.util.Arrays;
 import java.util.LinkedList;

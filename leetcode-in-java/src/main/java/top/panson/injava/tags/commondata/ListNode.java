@@ -1,4 +1,4 @@
-package top.panson.injava.deprecated.question.commondata;
+package top.panson.injava.tags.commondata;
 
 
 /**

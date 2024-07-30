@@ -50,6 +50,33 @@ class Solution {
  */
 ```
 
++ [382. 链表随机节点](https://leetcode.cn/problems/linked-list-random-node/description/)
+```java
+class Solution {
+    ListNode head;
+    Random random = new Random(20220116);
+    public Solution(ListNode _head) {
+        head = _head;
+    }
+    public int getRandom() {
+        int i = 0, res = 0;
+        ListNode p = head;
+        // while 循环遍历链表
+        while (p != null) {
+            i++;
+            // 生成一个 [0, i) 之间的整数
+            // 这个整数等于 0 的概率就是 1/i
+            if (0 == random.nextInt(i)) {
+                res = p.val;
+            }
+            p = p.next;
+        }
+        return res;
+    }
+}
+ 
+```
+
 
 
 
