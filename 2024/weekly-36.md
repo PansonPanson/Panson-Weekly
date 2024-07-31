@@ -104,7 +104,22 @@ class Solution {
  * int param_1 = obj.pick(target);
  */ 
 ```
-
++ [172. 阶乘后的零](https://leetcode.cn/problems/factorial-trailing-zeroes/description/)
+```java
+class Solution {
+    public int trailingZeroes(int n) {
+        if(n < 5) {
+            return 0;
+        }
+        int res = 0;
+        while(n > 0) {
+            n /= 5;
+            res += n;
+        }
+        return res;
+    }
+} 
+```
 
 
 
