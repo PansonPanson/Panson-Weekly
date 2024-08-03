@@ -35,7 +35,7 @@ public class L628 {
                     max3 = num;
                 }
             }
-            return Math.max(min1 * min2 * max1, max1 * max2 * max3);
+            return L372.max(min1 * min2 * max1, max1 * max2 * max3);
         }
     }
 }
