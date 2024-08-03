@@ -122,6 +122,88 @@ class Solution {
 ```
 
 
++ [793. 阶乘函数后 K 个零](https://leetcode.cn/problems/preimage-size-of-factorial-zeroes-function/description/)
+```java
+
+//leetcode submit region begin(Prohibit modification and deletion)
+class Solution {
+    /* 主函数 */
+    public int preimageSizeFZF(int K) {
+        // 左边界和右边界之差 + 1 就是答案
+        return (int)(rightBound(K) - leftBound(K) + 1);
+    }
+
+    /* 搜索 trailingZeroes(n) == K 的左侧边界 */
+    long leftBound(int target) {
+        long lo = 0, hi = Long.MAX_VALUE;
+        while (lo < hi) {
+            long mid = lo + (hi - lo) / 2;
+            if (trailingZeroes(mid) < target) {
+                lo = mid + 1;
+            } else if (trailingZeroes(mid) > target) {
+                hi = mid;
+            } else {
+                hi = mid;
+            }
+        }
+        return lo;
+    }
+
+    /* 搜索 trailingZeroes(n) == K 的右侧边界 */
+    long rightBound(int target) {
+        long lo = 0, hi = Long.MAX_VALUE;
+        while (lo < hi) {
+            long mid = lo + (hi - lo) / 2;
+            if (trailingZeroes(mid) < target) {
+                lo = mid + 1;
+            } else if (trailingZeroes(mid) > target) {
+                hi = mid;
+            } else {
+                lo = mid + 1;
+            }
+        }
+        return lo - 1;
+    }
+
+    // 逻辑不变，数据类型全部改成 long
+    long trailingZeroes(long n) {
+        long res = 0;
+        while(n > 0) {
+            n /= 5;
+            res += n;
+        }
+        return res;
+    }
+}
+//leetcode submit region end(Prohibit modification and deletion)
+ 
+```
+
++ [204. 计数质数](https://leetcode.cn/problems/count-primes/description/)
+```java
+class Solution {
+    public int countPrimes(int n) {
+        boolean[] isPrime = new boolean[n];
+        Arrays.fill(isPrime, true);
+        for(int i = 2; i * i < n; i++) {
+            if(isPrime[i]) {
+                for(int j = i * i; j < n; j += i) {
+                    isPrime[j] = false;
+                }
+            }
+        }
+        int count = 0;
+        for(int i = 2; i < n; i++) {
+            if(isPrime[i]) {
+                count++;
+            }
+        }
+        return count;
+    }
+} 
+```
+
+
 
 
 
