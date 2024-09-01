@@ -58,6 +58,69 @@ class Solution {
 ```
 
 
++ [713. 乘积小于 K 的子数组](https://leetcode.cn/problems/subarray-product-less-than-k/description/)
+```java
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        int left = 0, right = 0;
+        // 滑动窗口，初始化为乘法单位元
+        int windowProduct = 1;
+        // 记录符合条件的子数组个数
+        int count = 0;
+
+        while (right < nums.length) {
+            // 扩大窗口，并更新窗口数据
+            windowProduct = windowProduct * nums[right];
+            right++;
+
+            while (left < right && windowProduct >= k) {
+                // 缩小窗口，并更新窗口数据
+                windowProduct = windowProduct / nums[left];
+                left++;
+            }
+
+            count += right - left;
+        }
+
+        return count;
+    }
+} 
+```
+
++ [1004. 最大连续1的个数 III](https://leetcode.cn/problems/max-consecutive-ones-iii/description/)
+```java
+class Solution {
+    public int longestOnes(int[] nums, int k) {
+        int left = 0, right = 0;
+        // 记录窗口中 1 的出现次数
+        int windowOneCount = 0;
+        // 记录结果长度
+        int res = 0;
+
+        // 开始滑动窗口模板
+        while (right < nums.length) {
+            // 扩大窗口
+            if (nums[right] == 1) {
+                windowOneCount++;
+            }
+            right++;
+
+            while (right - left - windowOneCount > k) {
+                // 当窗口中需要替换的 0 的数量大于 k，缩小窗口
+                if (nums[left] == 1) {
+                    windowOneCount--;
+                }
+                left++;
+            }
+            // 此时一定是一个合法的窗口，求最大窗口长度
+            res = Math.max(res, right - left);
+        }
+        return res;
+    }
+} 
+```
+
+
 
 
 
