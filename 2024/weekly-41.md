@@ -179,6 +179,30 @@ class Solution {
 }
 ```
 
++ [2824. 统计和小于目标的下标对数目](https://leetcode.cn/problems/count-pairs-whose-sum-is-less-than-target/description/)
+```java
+class Solution {
+    public int countPairs(List<Integer> nums, int target) {
+        Collections.sort(nums);
+        int left = 0;
+        int right = nums.size() - 1;
+        int res = 0;
+        while(left < right) {
+            int sum = nums.get(left) + nums.get(right);
+            if(sum < target) {
+                res += right - left;
+                left++;
+            } else if(sum >= target) {
+                right--;
+            } else {
+                left++;
+            }
+        }
+        return res;
+    }
+} 
+```
+
 
 
 
