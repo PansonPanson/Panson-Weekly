@@ -18,7 +18,7 @@ public class L264 {
             int step5 = 1;
 
             while(i <= n) {
-                int min = L372.min(L372.min(step2, step3), step5);
+                int min = Math.min(Math.min(step2, step3), step5);
                 ugly[i] = min;
                 i++;
                 if(min == step2) {

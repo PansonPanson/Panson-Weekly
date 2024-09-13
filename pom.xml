@@ -22,6 +22,7 @@
     <modules>
         <module>leetcode-in-java</module>
         <module>code-in-java</module>
+        <module>jdk-sourcecode-reading</module>
     </modules>
 
     <build>
