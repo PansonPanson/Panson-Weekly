@@ -260,6 +260,63 @@ class Solution {
 ```
 
 
++ [971. 翻转二叉树以匹配先序遍历](https://leetcode.cn/problems/flip-binary-tree-to-match-preorder-traversal/description/)
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    List<Integer> res = new LinkedList<>();
+    int i = 0;
+    int[] voyage;
+    boolean canFlip = true;
+    public List<Integer> flipMatchVoyage(TreeNode root, int[] voyage) {
+        this.voyage = voyage;
+        traverse(root);
+        if(canFlip) {
+            return res;
+        } else {
+            return Arrays.asList(-1);
+        }
+    }
+
+    public void traverse(TreeNode root) {
+        if(root == null || !canFlip) {
+            return;
+        }
+        if(root.val != voyage[i]) {
+            canFlip = false;
+            i++;
+            return;
+        }
+        i++;
+
+        if(root.left != null && root.left.val != voyage[i]) {
+            TreeNode tmp = root.left;
+            root.left = root.right;
+            root.right = tmp;
+            res.add(root.val);
+        }
+        traverse(root.left);
+        traverse(root.right);
+
+    }
+} 
+```
+
+
 
 
 
