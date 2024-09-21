@@ -596,6 +596,31 @@ public class L1261 {
 ```
 
 
++ [386. 字典序排数](https://leetcode.cn/problems/lexicographical-numbers/description/)
+```java
+class Solution {
+
+    List<Integer> res = new ArrayList<>();
+    public List<Integer> lexicalOrder(int n) {
+        for(int i = 1; i < 10; i++) {
+            traverse(i, n);
+        }
+        return res;
+    }
+
+    public void traverse(int root, int n) {
+        if(root > n) {
+            return;
+        }
+        res.add(root);
+        for(int i = root * 10; i < root * 10 + 10; i++) {
+            traverse(i, n);
+        }
+    }
+}
+ 
+```
+
 
 
 
