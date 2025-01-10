@@ -34,6 +34,22 @@ public class L739 {
         }
     }
 
+    class Solution1 {
+        public int[] dailyTemperatures(int[] temperatures) {
+            ArrayDeque<Integer> stack = new ArrayDeque<>();
+            int[] res = new int[temperatures.length];
+            for(int i = 0; i < temperatures.length; i++) {
+                // 当前温度比栈顶当天温度高(从栈底到栈顶，由大到小)
+                while(!stack.isEmpty() && temperatures[i] > temperatures[stack.peek()]) {
+                    res[stack.peek()] = i - stack.peek();
+                    stack.pop();
+                }
+                stack.push(i);
+            }
+            return res;
+        }
+    }
+
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(new L739().new Solution().dailyTemperatures(new int[]{73, 74, 75, 71, 69, 72, 76, 73})));
