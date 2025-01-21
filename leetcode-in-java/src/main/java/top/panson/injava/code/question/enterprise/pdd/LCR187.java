@@ -22,4 +22,14 @@ public class LCR187 {
             return list.get(0);
         }
     }
+
+    class Solution1 {
+        public int iceBreakingGame(int num, int target) {
+            int ans = 0;
+            for(int i = 2; i <= num; i++) {
+                ans = (ans + target) % i;
+            }
+            return ans;
+        }
+    }
 }
