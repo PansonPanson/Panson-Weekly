@@ -1,6 +1,6 @@
 package top.panson.injava.code.question.enterprise.pdd;
 
-import top.panson.injava.tags.commondata.TreeNode;
+import top.panson.injava.code.question.tags.commondata.TreeNode;
 
 import java.util.Stack;
 

@@ -1,6 +1,6 @@
 package top.panson.injava.code.question.enterprise.pdd;
 
-import top.panson.injava.tags.commondata.ListNode;
+import top.panson.injava.code.question.tags.commondata.ListNode;
 
 /**
  * @author Panson

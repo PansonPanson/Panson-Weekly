@@ -1,6 +1,6 @@
 package top.panson.injava.code.question.practice.array;
 
-import top.panson.injava.tags.commondata.ListNode;
+import top.panson.injava.code.question.tags.commondata.ListNode;
 
 /**
  * @create 2022-06-03 13:23

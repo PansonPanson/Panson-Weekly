@@ -1,6 +1,6 @@
 package top.panson.injava.code.question.codetop.bytedance;
 
-import top.panson.injava.tags.commondata.Node;
+import top.panson.injava.code.question.tags.commondata.Node;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

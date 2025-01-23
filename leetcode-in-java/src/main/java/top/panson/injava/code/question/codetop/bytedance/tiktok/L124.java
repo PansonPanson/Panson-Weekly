@@ -1,6 +1,6 @@
 package top.panson.injava.code.question.codetop.bytedance.tiktok;
 
-import top.panson.injava.tags.commondata.TreeNode;
+import top.panson.injava.code.question.tags.commondata.TreeNode;
 
 /**
  * @create 2022-06-06 14:23

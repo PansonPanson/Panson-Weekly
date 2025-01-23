@@ -1,6 +1,6 @@
 package top.panson.injava.code.question.codetop.bytedance;
 
-import top.panson.injava.tags.commondata.ListNode;
+import top.panson.injava.code.question.tags.commondata.ListNode;
 
 /**
  * @create 2022-06-12 00:47
