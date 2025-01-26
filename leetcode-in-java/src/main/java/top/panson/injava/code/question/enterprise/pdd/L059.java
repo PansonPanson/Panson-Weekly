@@ -25,20 +25,20 @@ public class L059 {
                     cur++;
                 }
                 right--;
-                if(top <= bottom) {
-                    for(int i = right; i >= left; i--) {
-                        res[bottom][i] = cur;
-                        cur++;
-                    }
+
+                for(int i = right; i >= left; i--) {
+                    res[bottom][i] = cur;
+                    cur++;
                 }
+
                 bottom--;
 
-                if(left <= right) {
-                    for(int i = bottom; i >= top; i--) {
-                        res[i][left] = cur;
-                        cur++;
-                    }
+
+                for(int i = bottom; i >= top; i--) {
+                    res[i][left] = cur;
+                    cur++;
                 }
+
                 left++;
             }
             return res;
