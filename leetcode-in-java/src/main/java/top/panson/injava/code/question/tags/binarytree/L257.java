@@ -2,8 +2,7 @@ package top.panson.injava.code.question.tags.binarytree;
 
 import top.panson.injava.code.question.tags.commondata.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Panson
@@ -32,7 +31,7 @@ public class L257 {
         }
     }
 
-    class SolutionBfs {
+    class Solution1 {
         public List<String> binaryTreePaths(TreeNode root) {
             List<String> res = new ArrayList<>();
             List<String> path = new ArrayList<>();
@@ -54,5 +53,50 @@ public class L257 {
             path.removeLast();  // 回溯
         }
     }
+
+
+
+
+    class SolutionBFS {
+        public List<String> binaryTreePaths(TreeNode root) {
+            List<String> result = new ArrayList<>();
+            if (root == null) return result;
+
+            Deque<TreeNode> nodeQueue = new LinkedList<>();
+            Deque<String> pathQueue = new LinkedList<>();
+
+            nodeQueue.offer(root);
+            pathQueue.offer(String.valueOf(root.val));
+
+            while (!nodeQueue.isEmpty()) {
+                TreeNode node = nodeQueue.poll();
+                String path = pathQueue.poll();
+
+                if (node.left == null && node.right == null) {
+                    result.add(path);  // 叶子节点，加入结果
+                }
+
+                if (node.left != null) {
+                    nodeQueue.offer(node.left);
+                    pathQueue.offer(path + "->" + node.left.val);
+                }
+
+                if (node.right != null) {
+                    nodeQueue.offer(node.right);
+                    pathQueue.offer(path + "->" + node.right.val);
+                }
+            }
+
+            return result;
+        }
+    }
+
+
+
+
+
+
+
+
 
 }
