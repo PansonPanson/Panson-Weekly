@@ -40,33 +40,26 @@ public class PostOrder {
     public class SolutionIterator {
 
         public List<Integer> postorderTraversal(TreeNode root) {
+            TreeNode lastVisited = null;
+            TreeNode cur = root;
+            Deque<TreeNode> stack = new ArrayDeque<>();
             List<Integer> res = new ArrayList<>();
-            if (root == null) return res;
-
-            Deque<Pair<TreeNode, Boolean>> stack = new ArrayDeque<>();
-            stack.push(new Pair<>(root, false));
-
-            while (!stack.isEmpty()) {
-                Pair<TreeNode, Boolean> pair = stack.pop();
-                TreeNode node = pair.getKey();
-                boolean visited = pair.getValue();
-
-                if (node == null) {
-                    continue;
+            while(cur != null || !stack.isEmpty()) {
+                while(cur != null) {
+                    stack.push(cur);
+                    cur = cur.left;
                 }
-
-                if (visited) {
-                    res.add(node.val);
+                TreeNode peek = stack.peek();
+                if(peek.right != null && peek.right != lastVisited) {
+                    cur = peek.right;
                 } else {
-                    // 先压入根节点（标记已访问）
-                    stack.push(new Pair<>(node, true));
-                    // 后压入右子树（未访问）
-                    stack.push(new Pair<>(node.right, false));
-                    // 最后压入左子树（未访问）
-                    stack.push(new Pair<>(node.left, false));
+                    lastVisited = stack.pop();
+                    res.add(lastVisited.val);
+
                 }
             }
-            return res;
+            return  res;
+
         }
 
     }
