@@ -23,25 +23,45 @@ public class L543 {
      *     }
      * }
      */
+//    class Solution {
+//
+//        int length = 0;
+//
+//        public int diameterOfBinaryTree(TreeNode root) {
+//            if(root == null) {
+//                return 0;
+//            }
+//            length = Math.max(length, maxDepth(root.left) + maxDepth(root.right));
+//            diameterOfBinaryTree(root.left);
+//            diameterOfBinaryTree(root.right);
+//            return length;
+//        }
+//
+//        public int maxDepth(TreeNode root) {
+//            if(root == null) {
+//                return 0;
+//            }
+//            return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+//        }
+//    }
+
+
     class Solution {
-
-        int length = 0;
-
+        int res = 0;
         public int diameterOfBinaryTree(TreeNode root) {
-            if(root == null) {
-                return 0;
-            }
-            length = Math.max(length, maxDepth(root.left) + maxDepth(root.right));
-            diameterOfBinaryTree(root.left);
-            diameterOfBinaryTree(root.right);
-            return length;
+            depth(root);
+            return res;
         }
 
-        public int maxDepth(TreeNode root) {
+        public int depth(TreeNode root) {
             if(root == null) {
                 return 0;
             }
-            return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+
+            int leftDepth = depth(root.left);
+            int rightDepth = depth(root.right);
+            res = Math.max(res, leftDepth + rightDepth);
+            return Math.max(leftDepth , rightDepth) + 1;
         }
     }
 }
