@@ -29,9 +29,6 @@ public class LCR152 {
             }
 
             return verifyTreeOrder(postorder, start, mid - 1) && verifyTreeOrder(postorder, mid, end - 1);
-
-
-
         }
     }
 }
