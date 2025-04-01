@@ -41,4 +41,38 @@ public class L040 {
             }
         }
     }
+
+    class Solution1 {
+
+        List<List<Integer>> res = new ArrayList<>();
+        public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+            Arrays.sort(candidates);
+            traverse(candidates, target, new ArrayList<>(), 0);
+            return res;
+        }
+
+        public void traverse(int[] candidates, int target, List<Integer> path, int start) {
+
+            if(target == 0) {
+                res.add(new ArrayList<>(path));
+                return;
+            }
+
+            for(int i = start; i < candidates.length; i++) {
+                // 剪枝
+                if(candidates[i] > target) {
+                    break;
+                }
+                // 同层过滤重复数字
+                if(i > start && candidates[i] == candidates[i - 1]) {
+                    continue;
+                }
+
+                path.add(candidates[i]);
+                traverse(candidates, target - candidates[i], path, i + 1);
+                path.remove(path.size() - 1);
+            }
+
+        }
+    }
 }
