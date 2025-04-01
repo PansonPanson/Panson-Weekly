@@ -60,4 +60,30 @@ public class L046 {
 
         }
     }
+
+
+    class Solution3 {
+        class Solution {
+            List<List<Integer>> res = new ArrayList<>();
+            public List<List<Integer>> permute(int[] nums) {
+                traverse(nums, new ArrayList<>());
+                return res;
+            }
+
+            void traverse(int[] nums, List<Integer> path) {
+                if(path.size() == nums.length) {
+                    res.add(new ArrayList<>(path));
+                    return;
+                }
+                for(int num : nums) {
+                    if(path.contains(num)) {
+                        continue;
+                    }
+                    path.add(num);
+                    traverse(nums, path);
+                    path.remove(path.size() - 1);
+                }
+            }
+        }
+    }
 }
