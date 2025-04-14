@@ -1,4 +1,4 @@
-package top.panson.injava.code.question.tags.bfs;
+package top.panson.injava.code.question.tags.bfsanddfs;
 
 import top.panson.injava.code.question.tags.commondata.TreeNode;
 
