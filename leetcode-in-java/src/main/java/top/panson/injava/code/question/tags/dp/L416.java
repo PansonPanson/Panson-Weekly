@@ -66,4 +66,29 @@ public class L416 {
 
         }
     }
+
+
+    class Solution2 {
+        public boolean canPartition(int[] nums) {
+            int sum = 0;
+            for(int num : nums) {
+                sum += num;
+            }
+            if(sum % 2 != 0) {
+                return false;
+            }
+            int target = sum / 2;
+            boolean[] dp = new boolean[sum / 2 + 1];
+            // dp[i] 表示容量为 i 的背包可不可以填满
+            dp[0] = true;
+            for(int num : nums) {
+                for(int j = target; j >= num; j--) {
+                    // 不选择 num || 选择 num
+                    dp[j] = dp[j] || dp[j - num];
+                }
+            }
+            return dp[target];
+
+        }
+    }
 }
