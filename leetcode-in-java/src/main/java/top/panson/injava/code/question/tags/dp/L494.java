@@ -37,4 +37,60 @@ public class L494 {
             return dp[n][sum];
         }
     }
+
+    class Solution1 {
+        public int findTargetSumWays(int[] nums, int target) {
+            // dp[i][j] : 选择前 i 个 数，是否可以构造和为 j
+            // dp[i][j] = dp[i - 1][j - num[i - 1]] || dp[i - 1][j + nums[i - 1]]
+            int sum = 0;
+            for(int num : nums) {
+                sum += num;
+            }
+            if((sum + target) % 2 != 0 || Math.abs(target) > sum) {
+                return 0;
+            }
+            target = (sum + target) / 2;
+            int n = nums.length;
+            // dp[j]: 选出和为 j 的子集个数
+            int[] dp = new int[target + 1];
+            dp[0] = 1;
+            for(int num : nums) {
+                for(int j = target; j >= num; j--) {
+                    // 选择 num || 不选择
+                    dp[j] += dp[j - num];
+                }
+            }
+            return dp[target];
+        }
+    }
+
+
+    class Solution2 {
+        public int findTargetSumWays(int[] nums, int target) {
+            // dp[i][j] : 选择前 i 个 数，是否可以构造和为 j
+            int sum = 0;
+            for(int num : nums) {
+                sum += num;
+            }
+            if((sum + target) % 2 != 0 || Math.abs(target) > sum) {
+                return 0;
+            }
+            target = (sum + target) / 2;
+            int n = nums.length;
+            // dp[i][j] : 选择 i 个元素和为j 的子集个数
+            int[][] dp = new int[n + 1][target + 1];
+            dp[0][0] = 1;
+
+            for(int i = 1; i <= n; i++) {
+                for(int j = 0; j <= target; j++) {
+                    if(j >= nums[i - 1]) {
+                        dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]];
+                    } else {
+                        dp[i][j] = dp[i - 1][j];
+                    }
+                }
+            }
+            return dp[n][target];
+        }
+    }
 }
