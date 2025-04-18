@@ -27,4 +27,27 @@ public class L213 {
             return Math.max(dp[end][0], dp[end][1]);
         }
     }
+
+
+    class Solution1 {
+        public int rob(int[] nums) {
+            int n = nums.length;
+            if (n == 1) return nums[0]; // 只有一个房子特殊处理
+            return Math.max(rob(nums, 0, n - 2), rob(nums, 1, n - 1));
+        }
+
+        public int rob(int[] nums, int start, int end) {
+            int n = end - start + 1;
+            int dp0 = 0;
+            int dp1 = nums[start];
+            for(int i = start + 1; i <= end; i++) {
+                int tmpDp0 = dp0;
+                // 不偷
+                dp0 = Math.max(dp1, tmpDp0);
+                // 偷
+                dp1 = tmpDp0 + nums[i];
+            }
+            return Math.max(dp0, dp1);
+        }
+    }
 }
