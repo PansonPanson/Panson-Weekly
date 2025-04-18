@@ -1,5 +1,7 @@
 package top.panson.injava.code.question.tags.dp;
 
+import java.util.Arrays;
+
 /**
  * @author Panson
  * @create 2025-02-11
@@ -26,6 +28,25 @@ public class L322 {
                 }
             }
             return dp[n][amount] > amount ? -1: dp[n][amount];
+        }
+    }
+
+
+
+    class Solution1 {
+        public int coinChange(int[] coins, int amount) {
+            // dp[i][j] : 从前 i 种硬币中凑出总金额为 j 所需的最少硬币数
+            // dp[i][j] = Math.min(dp[i][j - coin] + 1, dp[i - 1][j]);
+            int n = coins.length;
+            int[] dp = new int[amount + 1];
+            Arrays.fill(dp, amount + 1);
+            dp[0] = 0;
+            for(int coin : coins) {
+                for(int j = coin; j <= amount; j++) {
+                    dp[j] = Math.min(dp[j - coin] + 1, dp[j]);
+                }
+            }
+            return dp[amount] > amount ? -1 : dp[amount];
         }
     }
 
