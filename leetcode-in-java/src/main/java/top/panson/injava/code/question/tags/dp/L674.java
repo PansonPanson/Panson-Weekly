@@ -23,4 +23,25 @@ public class L674 {
 
         }
     }
+
+    class Solution1 {
+        public int findLengthOfLCIS(int[] nums) {
+            int n = nums.length;
+            int dp0 = 1;
+            int dp1 = 1;
+            int max = 1;
+            for(int i = 1; i < n; i++) {
+                if(nums[i] > nums[i - 1]) {
+                    dp1 = dp0 + 1;
+                    dp0 = dp1;
+                } else {
+                    dp1 = 1;
+                    dp0 = 1;
+                }
+                max = Math.max(max, dp1);
+            }
+            return max;
+
+        }
+    }
 }
