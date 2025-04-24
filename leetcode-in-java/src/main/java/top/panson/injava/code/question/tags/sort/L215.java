@@ -1,4 +1,4 @@
-package top.panson.injava.code.question.tags.dp;
+package top.panson.injava.code.question.tags.sort;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ import java.util.Random;
  * @author Panson
  * @create 2025-04-21
  */
-public class L32 {
+public class L215 {
 
 
     class Solution {
