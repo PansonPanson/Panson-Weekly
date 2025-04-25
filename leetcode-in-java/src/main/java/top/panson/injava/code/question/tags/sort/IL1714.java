@@ -10,7 +10,9 @@ public class IL1714 {
     class Solution {
         public int[] smallestK(int[] arr, int k) {
 
-            PriorityQueue<Integer> queue = new PriorityQueue<>();
+            PriorityQueue<Integer> queue = new PriorityQueue<>(
+                    (a, b) -> b - a
+            );
             for(int num : arr) {
                 queue.offer(num);
             }
