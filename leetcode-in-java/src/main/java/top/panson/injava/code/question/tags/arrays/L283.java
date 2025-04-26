@@ -21,4 +21,19 @@ public class L283 {
         }
     }
 
+    class Solution1 {
+        public void moveZeroes(int[] nums) {
+            int i = 0;
+            int n = nums.length;
+            for(int j = 0; j < n; j++) {
+                if(nums[j] != 0) {
+                    int tmp = nums[j];
+                    nums[j] = nums[i];
+                    nums[i] = tmp;
+                    i++;
+                }
+            }
+        }
+    }
+
 }
