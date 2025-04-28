@@ -32,4 +32,23 @@ public class L209 {
             return min == n + 1 ? 0 : min;
         }
     }
+
+
+    class Solution1 {
+        public int minSubArrayLen(int target, int[] nums) {
+            int n = nums.length;
+            int left = 0;
+            int sum = 0;
+            int len = n + 1;
+            for(int right = 0; right < n; right++) {
+                sum += nums[right];
+                while(sum >= target) {
+                    len = Math.min(len, right - left + 1);
+                    sum -= nums[left];
+                    left++;
+                }
+            }
+            return len == n + 1 ? 0 : len;
+        }
+    }
 }
