@@ -48,4 +48,44 @@ public class L0142 {
             return fast;
         }
     }
+
+    /**
+     * Definition for singly-linked list.
+     * class ListNode {
+     *     int val;
+     *     ListNode next;
+     *     ListNode(int x) {
+     *         val = x;
+     *         next = null;
+     *     }
+     * }
+     */
+    public class Solution1 {
+        public ListNode detectCycle(ListNode head) {
+            // x + y + z = x + r
+            // 快慢指针第一次相遇，slow = x + y, fast = x + y + nr, 2x + 2y = x + y + nr -> x + y = nr ->  x = nr - y
+            //  快慢指针第一次相遇， 然后慢指针回到初始节点，走 x 距离 刚好和 fast 指针再次相遇
+            ListNode dummy = new ListNode(-1, head);
+            ListNode slow = dummy;
+            ListNode fast = dummy;
+            while(fast != null && fast.next != null) {
+                fast = fast.next.next;
+                slow = slow.next;
+                if(slow == fast) {
+                    break;
+                }
+            }
+            if(fast == null || fast.next == null) {
+                return null;
+            }
+            slow = dummy;
+            while(slow != fast) {
+                slow = slow.next;
+                fast = fast.next;
+            }
+            return slow;
+
+
+        }
+    }
 }
