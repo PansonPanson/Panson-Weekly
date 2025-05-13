@@ -68,10 +68,13 @@ public class L1206 {
         // 插入元素 t
         public void add(int t) {
             Node[] update = new Node[level];
+            // 1️⃣ 查找每层的前驱节点
             find(t, update);
+            // 2️⃣ 创建新节点
             Node node = new Node(t);
-            // 决定要插入多少层
+            // // 3️⃣ 决定要插入多少层
             for (int i = 0; i < level; i++) {
+                // 插入新节点标准步骤： update[i] -> node -> 原来的 update[i].forward[i]
                 node.forward[i] = update[i].forward[i];
                 update[i].forward[i] = node;
                 // 使用随机数控制是否晋升到下一层
