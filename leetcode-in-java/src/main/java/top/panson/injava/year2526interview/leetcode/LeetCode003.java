@@ -1,4 +1,4 @@
-package top.panson.injava.year2526interview;
+package top.panson.injava.year2526interview.leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
